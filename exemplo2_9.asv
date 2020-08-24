@@ -1,0 +1,22 @@
+clc;
+clear;
+%% Exemplo 2.9
+% y(n)-y(n-1)+0.9*y(n-2) = x(n)
+% a) Calcular a resposta ao impulso h(n) em n=-20,...,100.
+% b) Calcular a resposta ao degrau s(n) em n=-20,...,100.
+% c) O sistema especificado em h(n) é estável?
+% Para calcularmos os valores de h(n) e s(n) iremos utilizar as funções do
+% respectivamente impz e filter do matlab
+% a)
+b = 1;
+a = [1 -1 0.9];
+n = -20:120;
+h = impz(b,a,n);
+subplot(211)
+stem(n,h);
+title("Resposta ao impulso");
+xlabel("n");
+ylabel("y(n)");
+% b)
+x = stepseq(0,min(n),max(n));
+y = filter(b,a,x);

@@ -2,6 +2,8 @@ clc;
 clear;
 %% Exemplo 2.1
 %%
+% Estes exemplos são aplicações diretas das funções apresentadas no
+% capítulo
 % a) x(n) = 2*delta(n+2)-delta(n-4), -5<=n<=5
 n = -5:5;
 x = 2*impseq(-2,-5,5)-impseq(4,-5,5);

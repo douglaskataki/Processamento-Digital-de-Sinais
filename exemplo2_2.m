@@ -14,14 +14,14 @@ stem(n1,x1);
 title('Sequencia exemplo 2.2a');
 xlabel('n');
 ylabel('x(n)');
-% b) x2(n) = x(3-n)+x(n)*x(n-2);
-% x(3-n)
+% b) x2(n) = x(3-n)+x(n)*x(n-2)
+% Encontrando x(3-n):
 [x21,n21] = sigfold(x,n);
 [x21,n21] = sigshift(x21,n21,3);
-% x(n)*x(n-2)
+% Encontrando x(n)*x(n-2):
 [x22,n22] = sigshift(x,n,2);
 [x22,n22] = sigmult(x22,n22,x,n);
-% x2(n)
+% Por fim, x2(n):
 [x2,n2] = sigadd(x22,n22,x21,n21);
 subplot(212)
 stem(n2,x2);
