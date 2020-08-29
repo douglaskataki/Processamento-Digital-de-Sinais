@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>problems_chapter2</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-08-25"><meta name="DC.source" content="problems_chapter2.m"><style type="text/css">
+      --><title>problems_chapter2</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-08-28"><meta name="DC.source" content="problems_chapter2.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Problemas</a></li><li><a href="#3">P2.1</a></li><li><a href="#11">P2.2</a></li><li><a href="#17">P2.3</a></li><li><a href="#22">P2.4</a></li></ul></div><pre class="codeinput">clear;
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Problemas</a></li><li><a href="#3">P2.1</a></li><li><a href="#11">P2.2</a></li><li><a href="#17">P2.3</a></li><li><a href="#22">P2.4</a></li><li><a href="#27">P2.5</a></li><li><a href="#30">P2.6</a></li><li><a href="#34">P2.7</a></li><li><a href="#35">P2.8</a></li><li><a href="#38">P2.9</a></li><li><a href="#39">P2.10</a></li></ul></div><pre class="codeinput">clear;
 clc;
 </pre><h2 id="2">Problemas</h2><h2 id="3">P2.1</h2><p>1)</p><pre class="codeinput">n1 = -5:15;
 x1 = 3*impseq(-2,min(n1),max(n1))+ 2*impseq(0,min(n1),max(n1))+5*impseq(7,min(n1),max(n1));
@@ -132,14 +132,14 @@ y = zeros(1,length(N4));
 histogram(y,nbins);
 <span class="comment">% Distribui&ccedil;&atilde;o Normal. Lembrando que existe uma fun&ccedil;&atilde;o do matlab que</span>
 <span class="comment">% encontra uma distribui&ccedil;&atilde;o mais pr&oacute;xima do histograma (histfit).</span>
-</pre><img vspace="5" hspace="5" src="problems_chapter2_12.png" alt=""> <h2 id="17">P2.3</h2><p>Exemplo do livro: xtilde = x'*ones(1,P); xtilde = xtilde(:); xtilde = xtilde';</p><p>a) x1(n)={...,-2,-1,0,1,2,...}</p><pre class="codeinput">x1 = -2:2;
+</pre><img vspace="5" hspace="5" src="problems_chapter2_12.png" alt=""> <h2 id="17">P2.3</h2><p>Exemplo do livro: xtilde = x'*ones(1,P); xtilde = xtilde(:); xtilde = xtilde';</p><p>1) x1(n)={...,-2,-1,0,1,2,...}</p><pre class="codeinput">x1 = -2:2;
 P1 = 5;
 xp1 = x1'.*ones(1,P1);
 xp1 = (xp1(:))';
 stem(-2:2+P1*4,xp1);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{1}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_13.png" alt=""> <p>b) x2(n) = exp(0.1*n)(u(n)-u(n-20))</p><pre class="codeinput">n2 = 0:20;
+</pre><img vspace="5" hspace="5" src="problems_chapter2_13.png" alt=""> <p>2) x2(n) = exp(0.1*n)(u(n)-u(n-20))</p><pre class="codeinput">n2 = 0:20;
 x2 = exp(0.1*n2).*(stepseq(0,min(n2),max(n2))-stepseq(20,min(n2),max(n2)));
 P2 = 3;
 xp2 = x2'.*ones(1,P2);
@@ -147,7 +147,7 @@ xp2 =(xp2(:))';
 stem(xp2);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{2}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_14.png" alt=""> <p>c) x3(n) = sin(0.1*pi*n)(u(n)-u(n-10))</p><pre class="codeinput">n3 = 0:10;
+</pre><img vspace="5" hspace="5" src="problems_chapter2_14.png" alt=""> <p>3) x3(n) = sin(0.1*pi*n)(u(n)-u(n-10))</p><pre class="codeinput">n3 = 0:10;
 x3 = sin(0.1*pi*n3).*(stepseq(0,min(n3),max(n3))-stepseq(10,min(n3),max(n3)));
 P3 = 4;
 xp3 = x3'.*ones(1,P3);
@@ -155,7 +155,7 @@ xp3 =(xp3(:))';
 stem(xp3);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{3}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_15.png" alt=""> <p>d) x4(n) = [...,(1),2,3,...]+[...,(1),2,3,4,...] 0&lt;=n&lt;=24</p><pre class="codeinput">x41 = 1:3;
+</pre><img vspace="5" hspace="5" src="problems_chapter2_15.png" alt=""> <p>4) x4(n) = [...,(1),2,3,...]+[...,(1),2,3,4,...] 0&lt;=n&lt;=24</p><pre class="codeinput">x41 = 1:3;
 x42 = 1:4;
 xp41 = x41'.*ones(1,4);
 xp42 = x42'.*ones(1,3);
@@ -167,21 +167,21 @@ xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{4}(n)'</span>);
 </pre><img vspace="5" hspace="5" src="problems_chapter2_16.png" alt=""> <h2 id="22">P2.4</h2><p>x(n) = [2,4,-3,(1),-5,4,7]</p><pre class="codeinput">n = -3:3;
 x = [2,4,-3,1,-5,4,7];
-</pre><p>a) x1(n) = 2x(n-3)+3x(n+4)-x(n)</p><pre class="codeinput">[x11,n11] = sigshift(x,n,3);
+</pre><p>1) x1(n) = 2x(n-3)+3x(n+4)-x(n)</p><pre class="codeinput">[x11,n11] = sigshift(x,n,3);
 [x12,n12] = sigshift(x,n,-4);
 [x13,n13] = sigadd(2*x11,n11,3*x12,n12);
 [x1,n1] = sigadd(x13,n13,-x,n);
 stem(n1,x1);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{1}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_17.png" alt=""> <p>b) x2(n) = 4*x(n+4)+5x(n+5)+2x(n)</p><pre class="codeinput">[x21,n21] = sigshift(x,n,-4);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_17.png" alt=""> <p>2) x2(n) = 4*x(n+4)+5x(n+5)+2x(n)</p><pre class="codeinput">[x21,n21] = sigshift(x,n,-4);
 [x22,n22] = sigshift(x,n,-5);
 [x23,n23] = sigadd(4*x21,n21,5*x22,n22);
 [x2,n2] = sigadd(x23,n23,2*x,n);
 stem(n2,x2);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{2}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_18.png" alt=""> <p>c) x3(n) = x(n+3)x(n-2)+x(1-n)x(n+1)</p><pre class="codeinput">[x31,n31] = sigshift(x,n,-3);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_18.png" alt=""> <p>3) x3(n) = x(n+3)x(n-2)+x(1-n)x(n+1)</p><pre class="codeinput">[x31,n31] = sigshift(x,n,-3);
 [x32,n32] = sigshift(x,n,2);
 [x3a,n3a] = sigmult(x31,n31,x32,n32);
 [x33,n33] = sigfold(x,n);
@@ -192,7 +192,7 @@ ylabel(<span class="string">'x_{2}(n)'</span>);
 stem(n3,x3);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{3}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_19.png" alt=""> <p>d) x4(n)= 2exp(0.5*n)x(n) + cos(0.1*pi*n)x(n+2), -10&lt;=n&lt;=10;</p><pre class="codeinput">nd = -10:10;
+</pre><img vspace="5" hspace="5" src="problems_chapter2_19.png" alt=""> <p>4) x4(n)= 2exp(0.5*n)x(n) + cos(0.1*pi*n)x(n+2), -10&lt;=n&lt;=10;</p><pre class="codeinput">nd = -10:10;
 [x41,n41] = sigmult(2*exp(0.5*nd),nd,x,n);
 [x42,n42] = sigshift(x,n,-2);
 [x42,n42] = sigmult(x42,n42,cos(0.1*pi*nd),nd);
@@ -200,7 +200,196 @@ ylabel(<span class="string">'x_{3}(n)'</span>);
 stem(n4,x4);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'x_{4}(n)'</span>);
-</pre><img vspace="5" hspace="5" src="problems_chapter2_20.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="problems_chapter2_20.png" alt=""> <h2 id="27">P2.5</h2><p>1) Demonstra&ccedil;&atilde;o bem simples.</p><p>2)</p><pre class="codeinput">n=-100:100;
+y = exp(1i*0.1*pi*n);
+subplot(211)
+stem(n,real(y));
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'real(y(n))'</span>);
+subplot(212)
+stem(n,imag(y));
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'imag(y(n))'</span>);
+<span class="comment">% Como o valor de w0 = 0.1*pi, ent&atilde;o f0 = 0.1/2. Ou seja, 1/20 e isso nos</span>
+<span class="comment">% d&aacute; K = 1 e N = 20. Para N = 200 amostras, ent&atilde;o K = 10. Onde conseguimos</span>
+<span class="comment">% nos gr&aacute;ficos que temos 10 per&iacute;odos das partes reias e imagin&aacute;rias de</span>
+<span class="comment">% y(n).</span>
+</pre><img vspace="5" hspace="5" src="problems_chapter2_21.png" alt=""> <p>3)</p><pre class="codeinput">n = -20:20;
+y = cos(0.1*pi*n);
+stem(n,y);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'y(n)'</span>);
+<span class="comment">% temos um per&iacute;odo igual ao mostrado anteriormente.</span>
+</pre><img vspace="5" hspace="5" src="problems_chapter2_22.png" alt=""> <h2 id="30">P2.6</h2><p>1)</p><pre class="codeinput">n1 = 0:9;
+x1 = 0:9;
+[xe1,xo1,m1] = evenodd(x1,n1);
+subplot(211)
+stem(m1,xe1)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x1_{e}(n)'</span>);
+title(<span class="string">'Par'</span>);
+
+subplot(212)
+stem(m1,xo1)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x1_{o}(n)'</span>)
+title(<span class="string">'Impar'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_23.png" alt=""> <p>2)</p><pre class="codeinput">n2 = -10:10;
+x2 = exp(0.1*n2).*(stepseq(-5,min(n2),max(n2))-stepseq(10,min(n2),max(n2)));
+[xe2,xo2,m2] = evenodd(x2,n2);
+subplot(211)
+stem(m2,xe2)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x2_{e}(n)'</span>);
+title(<span class="string">'Par'</span>);
+
+subplot(212)
+stem(m2,xo2)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x1_{o}(n)'</span>)
+title(<span class="string">'Impar'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_24.png" alt=""> <p>3)</p><pre class="codeinput">n3 = -20:20;
+x3 = cos(0.2*pi*n3+pi/4);
+[xe3,xo3,m3] = evenodd(x3,n3);
+subplot(211)
+stem(m3,xe3)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x2_{e}(n)'</span>);
+title(<span class="string">'Par'</span>);
+
+subplot(212)
+stem(m3,xo3)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x1_{o}(n)'</span>)
+title(<span class="string">'Impar'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_25.png" alt=""> <p>4)</p><pre class="codeinput">n4 = 0:100;
+x4 = exp(-0.05*n4).*sin(0.1*pi*n4+pi/3);
+[xe4,xo4,m4] = evenodd(x4,n4);
+subplot(211)
+stem(m4,xe4)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x2_{e}(n)'</span>);
+title(<span class="string">'Par'</span>);
+
+subplot(212)
+stem(m4,xo4)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x1_{o}(n)'</span>)
+title(<span class="string">'Impar'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_26.png" alt=""> <h2 id="34">P2.7</h2><p>2)</p><pre class="codeinput">n = 0:10;
+x = 10*exp((-0.1+1i*0.2*pi)*n);
+[xe,xo,m] = evenodd(x,n);
+subplot(221)
+stem(m,real(xe));
+xlabel(<span class="string">'n'</span>);
+title(<span class="string">"Real x_{e}"</span>);
+subplot(222)
+stem(m,imag(xe));
+xlabel(<span class="string">'n'</span>);
+title(<span class="string">"Imag x_{e}"</span>);
+subplot(223)
+stem(m,real(xo));
+xlabel(<span class="string">'n'</span>);
+title(<span class="string">"Real x_{o}"</span>);
+subplot(224)
+stem(m,imag(xo));
+xlabel(<span class="string">'n'</span>);
+title(<span class="string">"Imag x_{o}"</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_27.png" alt=""> <h2 id="35">P2.8</h2><p>1) fun&ccedil;&atilde;o implementada</p><p>2)</p><pre class="codeinput">n = -50:50;
+x = sin(0.125*pi*n);
+M = 4;
+[y,m] = dnsample(x,n,M);
+subplot(211)
+stem(n,x)
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x(n)'</span>);
+
+subplot(212)
+stem(m,y)
+xlabel(<span class="string">'n'</span>);
+title(<span class="string">'M=4'</span>);
+ylabel(<span class="string">'y(n)'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_28.png" alt=""> <p>3)</p><pre class="codeinput">n2 = -50:50;
+x2 = sin(0.5*pi*n);
+M = 4;
+[y2,m2] = dnsample(x2,n2,M);
+subplot(211)
+stem(n2,x2);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x(n)'</span>);
+
+subplot(212)
+stem(m2,y2);
+xlabel(<span class="string">'n'</span>);
+title(<span class="string">'M=4'</span>);
+ylabel(<span class="string">'y(n)'</span>);
+<span class="comment">% A fun&ccedil;&atilde;o est&aacute; correta, por&eacute;m devido a aproxima&ccedil;&otilde;es feitas no matlab o</span>
+<span class="comment">% valor &eacute; dado como diferente de zero. Mas pela escala de 1e-14, podemos</span>
+<span class="comment">% verificar que de fato &eacute; zero o seu valor.</span>
+</pre><img vspace="5" hspace="5" src="problems_chapter2_29.png" alt=""> <h2 id="38">P2.9</h2><pre class="codeinput">nx = 0:20;
+x = 0.9.^nx;
+ny = -20:0;
+y = 0.8.^(-ny);
+
+<span class="comment">% r_{xx}</span>
+[xf,nxf] = sigfold(x,nx);
+[rxx,nrxx] = conv_m(x,nx,xf,nxf);
+
+subplot(311)
+stem(nx,x);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x(n)'</span>);
+subplot(312)
+stem(nxf,xf);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x(-n)'</span>);
+subplot(313);
+stem(nrxx,rxx);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'r_{xx}(l)'</span>);
+
+<span class="comment">% r_{}</span>
+[yf,nyf] = sigfold(y,ny);
+[rxy,nrxy] = conv_m(x,nx,yf,nyf);
+
+subplot(311)
+stem(nx,x);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x(n)'</span>);
+subplot(312)
+stem(nyf,yf);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'y(-n)'</span>);
+subplot(313);
+stem(nrxy,rxy);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'r_{xy}(l)'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_30.png" alt=""> <h2 id="39">P2.10</h2><p>y(n) = x(n)+a*x(n-k) 1) Demonstra&ccedil;ao fora do escopo do Matlab 2)</p><pre class="codeinput">nx = 0:200;
+x = cos(0.2*pi*nx)+0.5*cos(0.6*pi*nx);
+a = 0.1;
+k = 50;
+<span class="comment">% x(n-k)</span>
+[xk,nk] = sigshift(x,nx,k);
+<span class="comment">% y(n) = x(n)+a*x(n-k)</span>
+[y,ny] = sigadd(x,nx,a*xk,nk);
+<span class="comment">% y(-k)</span>
+[yf,nyf] = sigfold(y,ny);
+<span class="comment">% r_yy = y(l)**y(-l)</span>
+[ryy,nryy] = conv_m(y,ny,yf,nyf);
+
+subplot(311)
+stem(nx,x);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'x(n)'</span>);
+subplot(312)
+stem(ny,y);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'y(n)'</span>);
+subplot(313);
+stem(nryy,ryy);
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'r_{yy}(l)'</span>);
+</pre><img vspace="5" hspace="5" src="problems_chapter2_31.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 clear;
 clc;
@@ -304,7 +493,7 @@ histogram(y,nbins);
 % xtilde = xtilde(:);
 % xtilde = xtilde';
 %%
-% a)
+% 1)
 % x1(n)={...,-2,-1,0,1,2,...}
 x1 = -2:2;
 P1 = 5;
@@ -314,7 +503,7 @@ stem(-2:2+P1*4,xp1);
 xlabel('n');
 ylabel('x_{1}(n)');
 %%
-% b)
+% 2)
 % x2(n) = exp(0.1*n)(u(n)-u(n-20))
 n2 = 0:20;
 x2 = exp(0.1*n2).*(stepseq(0,min(n2),max(n2))-stepseq(20,min(n2),max(n2)));
@@ -325,7 +514,7 @@ stem(xp2);
 xlabel('n');
 ylabel('x_{2}(n)');
 %%
-% c) x3(n) = sin(0.1*pi*n)(u(n)-u(n-10))
+% 3) x3(n) = sin(0.1*pi*n)(u(n)-u(n-10))
 % 
 n3 = 0:10;
 x3 = sin(0.1*pi*n3).*(stepseq(0,min(n3),max(n3))-stepseq(10,min(n3),max(n3)));
@@ -336,7 +525,7 @@ stem(xp3);
 xlabel('n');
 ylabel('x_{3}(n)');
 %%
-% d) x4(n) = [...,(1),2,3,...]+[...,(1),2,3,4,...] 0<=n<=24
+% 4) x4(n) = [...,(1),2,3,...]+[...,(1),2,3,4,...] 0<=n<=24
 %
 x41 = 1:3;
 x42 = 1:4;
@@ -353,7 +542,7 @@ ylabel('x_{4}(n)');
 n = -3:3;
 x = [2,4,-3,1,-5,4,7];
 %%
-% a) x1(n) = 2x(n-3)+3x(n+4)-x(n)
+% 1) x1(n) = 2x(n-3)+3x(n+4)-x(n)
 [x11,n11] = sigshift(x,n,3);
 [x12,n12] = sigshift(x,n,-4);
 [x13,n13] = sigadd(2*x11,n11,3*x12,n12);
@@ -362,7 +551,7 @@ stem(n1,x1);
 xlabel('n');
 ylabel('x_{1}(n)');
 %%
-% b) x2(n) = 4*x(n+4)+5x(n+5)+2x(n)
+% 2) x2(n) = 4*x(n+4)+5x(n+5)+2x(n)
 [x21,n21] = sigshift(x,n,-4);
 [x22,n22] = sigshift(x,n,-5);
 [x23,n23] = sigadd(4*x21,n21,5*x22,n22);
@@ -371,7 +560,7 @@ stem(n2,x2);
 xlabel('n');
 ylabel('x_{2}(n)');
 %%
-% c) x3(n) = x(n+3)x(n-2)+x(1-n)x(n+1)
+% 3) x3(n) = x(n+3)x(n-2)+x(1-n)x(n+1)
 [x31,n31] = sigshift(x,n,-3);
 [x32,n32] = sigshift(x,n,2);
 [x3a,n3a] = sigmult(x31,n31,x32,n32);
@@ -384,7 +573,7 @@ stem(n3,x3);
 xlabel('n');
 ylabel('x_{3}(n)');
 %%
-% d) x4(n)= 2exp(0.5*n)x(n) + cos(0.1*pi*n)x(n+2), -10<=n<=10;
+% 4) x4(n)= 2exp(0.5*n)x(n) + cos(0.1*pi*n)x(n+2), -10<=n<=10;
 nd = -10:10;
 [x41,n41] = sigmult(2*exp(0.5*nd),nd,x,n);
 [x42,n42] = sigshift(x,n,-2);
@@ -393,5 +582,224 @@ nd = -10:10;
 stem(n4,x4);
 xlabel('n');
 ylabel('x_{4}(n)');
+%% P2.5
+% 1) Demonstração bem simples.
+%%
+% 2)
+n=-100:100;
+y = exp(1i*0.1*pi*n);
+subplot(211)
+stem(n,real(y));
+xlabel('n');
+ylabel('real(y(n))');
+subplot(212)
+stem(n,imag(y));
+xlabel('n');
+ylabel('imag(y(n))');
+% Como o valor de w0 = 0.1*pi, então f0 = 0.1/2. Ou seja, 1/20 e isso nos
+% dá K = 1 e N = 20. Para N = 200 amostras, então K = 10. Onde conseguimos
+% nos gráficos que temos 10 períodos das partes reias e imaginárias de
+% y(n).
+%%
+% 3)
+n = -20:20;
+y = cos(0.1*pi*n);
+stem(n,y);
+xlabel('n');
+ylabel('y(n)');
+% temos um período igual ao mostrado anteriormente.
+%% P2.6
+% 1)
+n1 = 0:9;
+x1 = 0:9;
+[xe1,xo1,m1] = evenodd(x1,n1);
+subplot(211)
+stem(m1,xe1)
+xlabel('n');
+ylabel('x1_{e}(n)');
+title('Par');
+
+subplot(212)
+stem(m1,xo1)
+xlabel('n');
+ylabel('x1_{o}(n)')
+title('Impar');
+%%
+% 2)
+n2 = -10:10;
+x2 = exp(0.1*n2).*(stepseq(-5,min(n2),max(n2))-stepseq(10,min(n2),max(n2)));
+[xe2,xo2,m2] = evenodd(x2,n2);
+subplot(211)
+stem(m2,xe2)
+xlabel('n');
+ylabel('x2_{e}(n)');
+title('Par');
+
+subplot(212)
+stem(m2,xo2)
+xlabel('n');
+ylabel('x1_{o}(n)')
+title('Impar');
+%%
+% 3)
+n3 = -20:20;
+x3 = cos(0.2*pi*n3+pi/4);
+[xe3,xo3,m3] = evenodd(x3,n3);
+subplot(211)
+stem(m3,xe3)
+xlabel('n');
+ylabel('x2_{e}(n)');
+title('Par');
+
+subplot(212)
+stem(m3,xo3)
+xlabel('n');
+ylabel('x1_{o}(n)')
+title('Impar');
+%%
+% 4)
+n4 = 0:100;
+x4 = exp(-0.05*n4).*sin(0.1*pi*n4+pi/3);
+[xe4,xo4,m4] = evenodd(x4,n4);
+subplot(211)
+stem(m4,xe4)
+xlabel('n');
+ylabel('x2_{e}(n)');
+title('Par');
+
+subplot(212)
+stem(m4,xo4)
+xlabel('n');
+ylabel('x1_{o}(n)')
+title('Impar');
+%% P2.7
+% 2)
+n = 0:10;
+x = 10*exp((-0.1+1i*0.2*pi)*n);
+[xe,xo,m] = evenodd(x,n);
+subplot(221)
+stem(m,real(xe));
+xlabel('n');
+title("Real x_{e}");
+subplot(222)
+stem(m,imag(xe));
+xlabel('n');
+title("Imag x_{e}");
+subplot(223)
+stem(m,real(xo));
+xlabel('n');
+title("Real x_{o}");
+subplot(224)
+stem(m,imag(xo));
+xlabel('n');
+title("Imag x_{o}");
+%% P2.8
+% 1) função implementada
+%% 
+% 2) 
+n = -50:50;
+x = sin(0.125*pi*n);
+M = 4;
+[y,m] = dnsample(x,n,M);
+subplot(211)
+stem(n,x)
+xlabel('n');
+ylabel('x(n)');
+
+subplot(212)
+stem(m,y)
+xlabel('n');
+title('M=4');   
+ylabel('y(n)');
+
+%% 
+% 3)
+n2 = -50:50;
+x2 = sin(0.5*pi*n);
+M = 4;
+[y2,m2] = dnsample(x2,n2,M);
+subplot(211)
+stem(n2,x2);
+xlabel('n');
+ylabel('x(n)');
+
+subplot(212)
+stem(m2,y2);
+xlabel('n');
+title('M=4');   
+ylabel('y(n)');
+% A função está correta, porém devido a aproximações feitas no matlab o
+% valor é dado como diferente de zero. Mas pela escala de 1e-14, podemos
+% verificar que de fato é zero o seu valor.
+
+%% P2.9
+nx = 0:20;
+x = 0.9.^nx;
+ny = -20:0;
+y = 0.8.^(-ny);
+
+% r_{xx}
+[xf,nxf] = sigfold(x,nx);
+[rxx,nrxx] = conv_m(x,nx,xf,nxf);
+
+subplot(311)
+stem(nx,x);
+xlabel('n');
+ylabel('x(n)');
+subplot(312)
+stem(nxf,xf);
+xlabel('n');
+ylabel('x(-n)');
+subplot(313);
+stem(nrxx,rxx);
+xlabel('n');
+ylabel('r_{xx}(l)');
+
+% r_{}
+[yf,nyf] = sigfold(y,ny);
+[rxy,nrxy] = conv_m(x,nx,yf,nyf);
+
+subplot(311)
+stem(nx,x);
+xlabel('n');
+ylabel('x(n)');
+subplot(312)
+stem(nyf,yf);
+xlabel('n');
+ylabel('y(-n)');
+subplot(313);
+stem(nrxy,rxy);
+xlabel('n');
+ylabel('r_{xy}(l)');
+%% P2.10
+% y(n) = x(n)+a*x(n-k)
+% 1) Demonstraçao fora do escopo do Matlab
+% 2) 
+nx = 0:200;
+x = cos(0.2*pi*nx)+0.5*cos(0.6*pi*nx);
+a = 0.1;
+k = 50;
+% x(n-k)
+[xk,nk] = sigshift(x,nx,k);
+% y(n) = x(n)+a*x(n-k)
+[y,ny] = sigadd(x,nx,a*xk,nk);
+% y(-k)
+[yf,nyf] = sigfold(y,ny);
+% r_yy = y(l)**y(-l)
+[ryy,nryy] = conv_m(y,ny,yf,nyf);
+
+subplot(311)
+stem(nx,x);
+xlabel('n');
+ylabel('x(n)');
+subplot(312)
+stem(ny,y);
+xlabel('n');
+ylabel('y(n)');
+subplot(313);
+stem(nryy,ryy);
+xlabel('n');
+ylabel('r_{yy}(l)');
+%%
 ##### SOURCE END #####
 --></body></html>
